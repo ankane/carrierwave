@@ -655,6 +655,8 @@ describe CarrierWave::ActiveRecord do
 
         expect(@event.avatar).to be_an_instance_of(@uploader)
         expect(@event.image).to eq('test.jpeg')
+        expect(@event.avatar.mounted_as).to eq(:avatar)
+        expect(@event.avatar.mount_on).to eq(:image)
       end
 
     end
